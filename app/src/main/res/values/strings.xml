@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EtomicSwapKit</string>
+    <string-array name="coins">
+        <item>RETH</item>
+        <item>KETH</item>
+    </string-array>
+</resources>

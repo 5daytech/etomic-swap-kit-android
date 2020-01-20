@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_balance"
+        android:title="Balance"
+        android:icon="@drawable/ic_account_balance_wallet_black_24dp"/>
+
+    <item
+        android:id="@+id/navigation_swap"
+        android:title="Swap"
+        android:icon="@drawable/ic_swap_calls_black_24dp"/>
+
+</menu>
