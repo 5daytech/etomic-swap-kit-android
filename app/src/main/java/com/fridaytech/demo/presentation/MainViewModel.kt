@@ -191,7 +191,7 @@ class MainViewModel : ViewModel() {
             contract.newContract(
                 makerRequest?.makerAddress,
                 makerRequest?.secretHash?.hexToBytes(),
-                makerRequest?.timeLock?.toBigInteger(),
+                ((Date().time / 1000) + 1200).toBigInteger(),
                 makerRequest?.takerAmount
             ).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
