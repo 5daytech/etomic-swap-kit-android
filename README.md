@@ -1,21 +1,28 @@
 # Etomic Swap Kit
 
-ETH etomic swap implementation written in Kotlin to support ETH and ERC20 atomic swaps. 
+ETH etomic swap implementation written in Kotlin to support ETH and ERC20 atomic swaps.
+ 
+Use these kit for creating HTLCs on the Ethereum side of a cross chain atomic swap.
 
-#### Please note that this project is not production ready yet!
+### Please note that this project is not production ready yet!
 
 ## Swap workflow
-* Bob wants to change his A coin to Alice B coin.
-* Bob sends payment locked with hash of the Secret. He can refund the payment in 4 hours.
-* Alice sends payment locked with Bob Secret hash. She can refund her payment in 2 hours.
-* Bob spends Alice payment by revealing the secret.
-* Alice spends Bob payment using revealed secret.
+1. Bob wants to change his A coin to Alice B coin.
+2. Bob sends payment locked with hash of the Secret. He can refund the payment in N hours.
+3. Alice sends payment locked with Bob Secret hash. She can refund her payment in N/2 hours.
+4. Bob spends Alice payment by revealing the secret.
+5. Alice spends Bob payment using revealed secret.
 
 ![Logo](/images/htlc_workflow.jpg)
 
 ## Prerequisites
 * JDK >= 1.8
 * Android 6 (minSdkVersion 23) or greater
+
+## Interaction
+- `newContract(receiverAddress, hashlock, timelock)` create new HTLC with given receiver, hashlock and expiry; returns contractId bytes32
+- `withdraw(contractId, preimage)` claim funds revealing the preimage
+- `refund(contractId)` if withdraw was not called the contract creator can get a refund by calling this some time after the time lock has expired.
 
 ## License
     MIT License
