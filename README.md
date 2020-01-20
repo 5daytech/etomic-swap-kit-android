@@ -11,6 +11,8 @@ ETH etomic swap implementation written in Kotlin to support ETH and ERC20 atomic
 * Bob spends Alice payment by revealing the secret.
 * Alice spends Bob payment using revealed secret.
 
+![Logo](/images/htlc_workflow.jpg)
+
 ## Prerequisites
 * JDK >= 1.8
 * Android 6 (minSdkVersion 23) or greater
